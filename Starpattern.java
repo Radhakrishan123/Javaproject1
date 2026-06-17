@@ -1,38 +1,38 @@
+// Import the Scanner class to take input from the keyboard
+import java.util.Scanner;
+
+// Create a class named Starpattern
 public class Starpattern {
-    
+
+    // The main method is the entry point of the Java program
     public static void main(String[] args) {
 
-        for(int i = 1; i <= 5; i++) {
+        // Create a Scanner object to read user input
+        Scanner sc = new Scanner(System.in);
 
-            for(int j = 1; j <= i; j++) {
+        // Ask the user to enter the number of rows
+        System.out.print("Enter the number of rows: ");
+
+        // Store the user's input in the variable 'rows'
+        int rows = sc.nextInt();
+
+        // Outer loop controls how many rows will be printed
+        for (int i = 1; i <= rows; i++) {
+
+            // Inner loop prints stars in the current row
+            // It prints stars equal to the value of i
+            for (int j = 1; j <= i; j++) {
+
+                // Print one star without moving to the next line
                 System.out.print("*");
             }
 
+            // After printing all stars in one row,
+            // move the cursor to the next line
             System.out.println();
         }
+
+        // Close the Scanner object to free memory
+        sc.close();
     }
 }
-    
-
-// import java.util.Scanner;
-
-// public class StarPattern {
-//     public static void main(String[] args) {
-
-//         Scanner sc = new Scanner(System.in);
-
-//         System.out.print("Enter the number of rows: ");
-//         int rows = sc.nextInt();
-
-//         for (int i = 1; i <= rows; i++) {
-
-//             for (int j = 1; j <= i; j++) {
-//                 System.out.print("*");
-//             }
-
-//             System.out.println();
-//         }
-
-//         sc.close();
-//     }
-// }
