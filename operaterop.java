@@ -1,15 +1,33 @@
-public class operaterop {
-   public operaterop() {
-   }
+import java.util.Scanner;   // Import Scanner class to take input from the user
 
-   public static void main(String[] var0) {
-    int a = 30;
-    int b = 20;
+public class operaterop {   // Create a class named operaterop
 
-      System.out.println(a+b);
-      System.out.println(a-b);
-      System.out.println(a*b);
-      System.out.println(a/b);
+    public static void main(String[] args) {   // Main method - execution starts here
 
-   }
+        // Create Scanner object to read input
+        Scanner sc = new Scanner(System.in);
+
+        // Ask the user to enter the first number
+        System.out.println("Enter value of a:");
+        int a = sc.nextInt();   // Store the first input in variable 'a'
+
+        // Ask the user to enter the second number
+        System.out.println("Enter value of b:");
+        int b = sc.nextInt();   // Store the second input in variable 'b'
+
+        // Addition
+        System.out.println("Addition = " + (a + b));
+
+        // Subtraction
+        System.out.println("Subtraction = " + (a - b));
+
+        // Multiplication
+        System.out.println("Multiplication = " + (a * b));
+
+        // Division
+        System.out.println("Division = " + (a / b));
+
+        // Close the Scanner
+        sc.close();
+    }
 }
