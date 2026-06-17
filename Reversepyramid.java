@@ -1,53 +1,44 @@
-public class Reversepyramid {
-    
+// Import the Scanner class to take input from the keyboard
+import java.util.Scanner;
 
+// Create a class named Reversepyramid
+public class Reversepyramid {
+
+    // The main() method is the starting point of the Java program
     public static void main(String[] args) {
 
-        int n=5;
+        // Create a Scanner object to read input from the user
+        Scanner sc = new Scanner(System.in);
 
-        for(int i=1;i<=n;i++) {
+        // Ask the user to enter the number of rows
+        System.out.print("Enter the number of rows: ");
 
-            for(int j=1;j<=i-1;j++) {
+        // Store the entered value in the variable 'n'
+        int n = sc.nextInt();
+
+        // Outer loop controls the total number of rows
+        // It starts from row 1 and continues until row n
+        for (int i = 1; i <= n; i++) {
+
+            // Print spaces before the stars
+            // The number of spaces increases by one in each row
+            for (int j = 1; j <= i - 1; j++) {
                 System.out.print(" ");
             }
 
-            for(int j=1;j<=2*(n-i)+1;j++) {
+            // Print stars
+            // The number of stars decreases by two in each row
+            // Formula: 2 × (n - i) + 1
+            for (int j = 1; j <= 2 * (n - i) + 1; j++) {
                 System.out.print("*");
             }
 
+            // After printing one row,
+            // move the cursor to the next line
             System.out.println();
         }
+
+        // Close the Scanner object to free system resources
+        sc.close();
     }
 }
-    
-// import java.util.Scanner;
-
-// public class ReversePyramid {
-
-//     public static void main(String[] args) {
-
-//         Scanner sc = new Scanner(System.in);
-
-//         System.out.print("Enter the number of rows: ");
-//         int n = sc.nextInt();
-
-//         // Reverse Pyramid
-//         for (int i = 1; i <= n; i++) {
-
-//             // Print spaces
-//             for (int j = 1; j <= i - 1; j++) {
-//                 System.out.print(" ");
-//             }
-
-//             // Print stars
-//             for (int j = 1; j <= 2 * (n - i) + 1; j++) {
-//                 System.out.print("*");
-//             }
-
-//             // Move to the next line
-//             System.out.println();
-//         }
-
-//         sc.close();
-//     }
-// }
