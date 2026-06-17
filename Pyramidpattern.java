@@ -1,8 +1,8 @@
 // Import the Scanner class to take input from the keyboard
 import java.util.Scanner;
 
-// Create a class named NumberTriangle
-public class Numbertriangle {
+// Create a class named Pyramidpattern
+public class Pyramidpattern {
 
     // The main() method is the starting point of the Java program
     public static void main(String[] args) {
@@ -13,19 +13,23 @@ public class Numbertriangle {
         // Ask the user to enter the number of rows
         System.out.print("Enter the number of rows: ");
 
-        // Store the entered value in the variable 'n'
+        // Store the entered number in the variable 'n'
         int n = sc.nextInt();
 
-        // Outer loop controls the number of rows
-        // It starts from row 1 and continues until row n
+        // Outer loop controls the number of rows in the pyramid
         for (int i = 1; i <= n; i++) {
 
-            // Inner loop prints numbers in each row
-            // It starts from 1 and prints up to the current row number
-            for (int j = 1; j <= i; j++) {
+            // Print spaces before the stars
+            // The number of spaces decreases in each row
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
 
-                // Print the value of j without moving to the next line
-                System.out.print(j);
+            // Print stars
+            // The number of stars increases by 2 in each row
+            // Formula: (2 × row number) - 1
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print("*");
             }
 
             // After printing one complete row,
