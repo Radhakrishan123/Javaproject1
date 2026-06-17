@@ -1,47 +1,58 @@
-public class lagestofthreeno {
-    public lagestofthreeno() {
-    }
+// Import the Scanner class to take input from the keyboard
+import java.util.Scanner;
 
-    public static void main(String[] var0) {
-     int a = 40;
-     int b = 30;
-     int c = 20;
+// Create a class named LargestOfThree
+public class LargestOfThree {
 
-     if(a>b && a>c){
-        System.out.println("a is largest");
-     }
-     else if(b>a && b>c){
-        System.out.println("b is largest");
-     }
-     else{
-        System.out.println("c is largest");
-     }
+    // The main() method is the starting point of the Java program
+    public static void main(String[] args) {
+
+        // Create a Scanner object to read input from the user
+        Scanner sc = new Scanner(System.in);
+
+        // Ask the user to enter the first number
+        System.out.print("Enter first number: ");
+
+        // Store the first number in variable 'a'
+        int a = sc.nextInt();
+
+        // Ask the user to enter the second number
+        System.out.print("Enter second number: ");
+
+        // Store the second number in variable 'b'
+        int b = sc.nextInt();
+
+        // Ask the user to enter the third number
+        System.out.print("Enter third number: ");
+
+        // Store the third number in variable 'c'
+        int c = sc.nextInt();
+
+        // Check if 'a' is greater than or equal to both 'b' and 'c'
+        if (a >= b && a >= c) {
+
+            // If true, print 'a' as the largest number
+            System.out.println("Largest Number = " + a);
+
+        }
+
+        // Otherwise, check if 'b' is greater than or equal to both 'a' and 'c'
+        else if (b >= a && b >= c) {
+
+            // If true, print 'b' as the largest number
+            System.out.println("Largest Number = " + b);
+
+        }
+
+        // If neither 'a' nor 'b' is the largest,
+        // then 'c' must be the largest
+        else {
+
+            // Print 'c' as the largest number
+            System.out.println("Largest Number = " + c);
+        }
+
+        // Close the Scanner object to free system resources
+        sc.close();
     }
-    
 }
-// import java.util.Scanner;
-
-// public class LargestOfThree {
-//     public static void main(String[] args) {
-//         Scanner sc = new Scanner(System.in);
-
-//         System.out.print("Enter first number: ");
-//         int a = sc.nextInt();
-
-//         System.out.print("Enter second number: ");
-//         int b = sc.nextInt();
-
-//         System.out.print("Enter third number: ");
-//         int c = sc.nextInt();
-
-//         if(a >= b && a >= c) {
-//             System.out.println("Largest Number = " + a);
-//         }
-//         else if(b >= a && b >= c) {
-//             System.out.println("Largest Number = " + b);
-//         }
-//         else {
-//             System.out.println("Largest Number = " + c);
-//         }
-//     }
-// }
