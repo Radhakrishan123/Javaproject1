@@ -34,7 +34,7 @@ public class Student {
 
     // Display Student Details
     public void display() {
-        System.out.println("\n----- Student Details -----");
+        System.out.println("\n- Student Details -");
         System.out.println("Student ID    : " + id);
         System.out.println("Student Name  : " + name);
         System.out.println("Student Marks : " + marks);
