@@ -1,16 +1,50 @@
-import java.util.Scanner;
+class Student1 {
 
+    int id;
+    String name;
+    double marks;
+
+    // Parameterized Constructor
+    Student1(int id, String name, double marks) {
+        this.id = id;
+        this.name = name;
+        this.marks = marks;
+    }
+
+    void display() {
+        System.out.println("Student 1 Details");
+        System.out.println("ID    : " + id);
+        System.out.println("Name  : " + name);
+        System.out.println("Marks : " + marks);
+    }
+}
 public class Student {
 
-    // Data Members
+    public static void main(String[] args) {
+
+        // Constructor is called here
+        Student1 s1 = new Student1(152, "Radha Krishan", 94.5);
+
+        // Display student details
+        s1.display();
+    }
+}
+class student {
+
     private int id;
     private String name;
     private double marks;
 
-    // Constructor
-    public Student(int id, String name, double marks) {
+    // Setter Methods
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public void setMarks(double marks) {
         this.marks = marks;
     }
 
@@ -26,52 +60,23 @@ public class Student {
     public double getMarks() {
         return marks;
     }
+}
+public class Student2 {
 
-    // Setter Method
-    public void setMarks(double marks) {
-        this.marks = marks;
-    }
-
-    // Display Student Details
-    public void display() {
-        System.out.println("\n----- Student Details -----");
-        System.out.println("Student ID    : " + id);
-        System.out.println("Student Name  : " + name);
-        System.out.println("Student Marks : " + marks);
-    }
-
-    // Main Method
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        student s2 = new student();
 
-        // Input Student Details
-        System.out.print("Enter Student ID: ");
-        int id = sc.nextInt();
-        sc.nextLine(); // Consume newline
+        // Set values using Setter methods
+        s2.setId(152);
+        s2.setName("Radha Krishan");
+        s2.setMarks(94.5);
 
-        System.out.print("Enter Student Name: ");
-        String name = sc.nextLine();
-
-        System.out.print("Enter Student Marks: ");
-        double marks = sc.nextDouble();
-
-        // Create Student Object
-        Student student = new Student(id, name, marks);
-
-        // Display Details
-        student.display();
-
-        // Update Marks
-        System.out.print("\nEnter New Marks: ");
-        double newMarks = sc.nextDouble();
-
-        student.setMarks(newMarks);
-
-        // Display Updated Details
-        System.out.println("\nAfter Updating Marks:");
-        student.display();
-
-        sc.close();
+        // Get and print values using Getter methods
+        System.out.println("Student 2 Details");
+        System.out.println("ID    : " + s2.getId());
+        System.out.println("Name  : " + s2.getName());
+        System.out.println("Marks : " + s2.getMarks());
     }
 }
+
