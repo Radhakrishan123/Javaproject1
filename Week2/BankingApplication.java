@@ -1,107 +1,75 @@
 import java.util.Scanner;
+ class Bank {
+    private String name;
+    private int accountNumber;
+    private double balance;
 
-public class BankingApplication {
-
-    // Inner Class
-    static class BankAccount {
-
-        private String accountHolder;
-        private int accountNumber;
-        private double balance;
-
-        // Constructor
-        public BankAccount(String accountHolder, int accountNumber, double balance) {
-            this.accountHolder = accountHolder;
-            this.accountNumber = accountNumber;
-            this.balance = balance;
-        }
-
-        // Deposit Method
-        public void deposit(double amount) {
-            if (amount > 0) {
-                balance += amount;
-                System.out.println("₹" + amount + " deposited successfully.");
-            } else {
-                System.out.println("Invalid deposit amount.");
-            }
-        }
-
-        // Withdraw Method
-        public void withdraw(double amount) {
-            if (amount > 0 && amount <= balance) {
-                balance -= amount;
-                System.out.println("₹" + amount + " withdrawn successfully.");
-            } else {
-                System.out.println("Insufficient balance or invalid amount.");
-            }
-        }
-
-        // Balance Inquiry
-        public void checkBalance() {
-            System.out.println("Current Balance: ₹" + balance);
-        }
-
-        // Display Account Details
-        public void displayAccount() {
-            System.out.println("\nAccount Holder : " + accountHolder);
-            System.out.println("Account Number : " + accountNumber);
-        }
+    public Bank(String name, int accountNumber, double balance) {
+        this.name = name;
+        this.accountNumber = accountNumber;
+        this.balance = balance;
     }
 
-    // Main Method
-    public static void main(String[] args) {
+    public String getName() {
+        return name;
+    }
 
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+    void setbalance(double balance){
+        this.balance = balance;
+    }
+}
+class Deposit{
+    public Deposit(Bank Account  , double amount) {
+        Account.setbalance(Account.getBalance() + amount);
+        System.out.println("Money deposited");
+
+    }
+}
+class withdraw{
+    withdraw(Bank Account , double amount){
+        if (Account.getBalance() >= amount) {
+            Account.setbalance(Account.getBalance() - amount);
+            System.out.println("Money withdrawn");
+        } else {
+            System.out.println("Insufficient balance");
+        }
+    }
+}
+public class BankingApplication {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        BankAccount account = new BankAccount("Radha Krishna", 123456789, 5000);
+        System.out.print("Enter Account Holder Name: ");
+        String name = sc.nextLine();
 
-        int choice;
-        double amount;
+        System.out.print("Enter Account Number: ");
+        int accountNumber = sc.nextInt();
 
-        do {
-            System.out.println("\n====== BANKING APPLICATION ======");
-            System.out.println("1. Deposit");
-            System.out.println("2. Withdraw");
-            System.out.println("3. Balance Inquiry");
-            System.out.println("4. Account Details");
-            System.out.println("5. Exit");
-            System.out.print("Enter your choice: ");
+        System.out.print("Enter Initial Balance: ");
+        double balance = sc.nextDouble();
 
-            choice = sc.nextInt();
+        Bank account = new Bank(name, accountNumber, balance);
 
-            switch (choice) {
+        System.out.println("\nAccount Details");
+        System.out.println("Account Holder Name: " + account.getName());
+        System.out.println("Account Number: " + account.getAccountNumber());
+        System.out.println("Balance: " + account.getBalance());
 
-                case 1:
-                    System.out.print("Enter deposit amount: ");
-                    amount = sc.nextDouble();
-                    account.deposit(amount);
-                    break;
+        System.out.print("\nEnter amount to deposit: ");
+        double depositAmount = sc.nextDouble();
+        new Deposit(account, depositAmount);
+        System.out.println("Updated Balance: " + account.getBalance());
 
-                case 2:
-                    System.out.print("Enter withdrawal amount: ");
-                    amount = sc.nextDouble();
-                    account.withdraw(amount);
-                    break;
-
-                case 3:
-                    account.checkBalance();
-                    break;
-
-                case 4:
-                    account.displayAccount();
-                    account.checkBalance();
-                    break;
-
-                case 5:
-                    System.out.println("Thank you for using our Banking Application.");
-                    break;
-
-                default:
-                    System.out.println("Invalid Choice.");
-            }
-
-        } while (choice != 5);
-
-        sc.close();
+        System.out.print("\nEnter amount to withdraw: ");
+        double withdrawAmount = sc.nextDouble();
+        new withdraw(account, withdrawAmount);
+        System.out.println("Updated Balance: " + account.getBalance());
     }
 }
