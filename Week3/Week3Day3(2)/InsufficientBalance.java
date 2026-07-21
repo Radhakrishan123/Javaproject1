@@ -1,3 +1,32 @@
+
+import java.util.Scanner;
+
+public class InsufficientBalance {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Balance: ");
+        int balance = sc.nextInt();
+
+        try {
+            if (balance < 500) {
+                int x = 10 / 0;   //  ArithmeticException
+            }
+
+            System.out.println("Transaction Successful");
+            System.out.println("Available Balance: " + balance);
+
+        } catch (ArithmeticException e) {
+            System.out.println("Insufficient Balance");
+        }
+        finally{
+            System.out.println("welcome to sbi bank ");//fianally block always executed 
+        }
+        sc.close();
+    }
+}
 // import java.util.Scanner;
 
 // public class Balancecheck {
@@ -37,31 +66,3 @@
 //         sc.close();
 //     }
 // }
-import java.util.Scanner;
-
-public class InsufficientBalance {
-
-    public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter Balance: ");
-        int balance = sc.nextInt();
-
-        try {
-            if (balance < 500) {
-                int x = 10 / 0;   //  ArithmeticException
-            }
-
-            System.out.println("Transaction Successful");
-            System.out.println("Available Balance: " + balance);
-
-        } catch (ArithmeticException e) {
-            System.out.println("Insufficient Balance");
-        }
-        finally{
-            System.out.println("welcome to sbi bank ");
-        }
-        sc.close();
-    }
-}
