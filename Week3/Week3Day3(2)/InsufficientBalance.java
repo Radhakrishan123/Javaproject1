@@ -59,7 +59,9 @@ public class InsufficientBalance {
         } catch (ArithmeticException e) {
             System.out.println("Insufficient Balance");
         }
-
+        finally{
+            System.out.println("welcome to sbi bank ");
+        }
         sc.close();
     }
 }
