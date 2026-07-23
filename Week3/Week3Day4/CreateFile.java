@@ -20,88 +20,88 @@ public class CreateFile {
     }
     
 }
-//code to write to a file
-// try{
-// FileWriter fileWriter= new FileWriter("createfile.txt");
-// fileWriter.write("this is the first line from this java course\n ok now byee");
-// fileWriter.close();
+code to write to a file
+try{
+FileWriter fileWriter= new FileWriter("createfile.txt");
+fileWriter.write("this is the first line from this java course\n ok now byee");
+fileWriter.close();
 
-// }
-// catch(IOException e){
-//     e.printStackTrace();
-// }
-//     }
-// }
-////reading the file
-//File myfile = new File("createfile.txt");
+}
+catch(IOException e){
+    e.printStackTrace();
+}
+    }
+}
+//reading the file
+File myfile = new File("createfile.txt");
 
-//File myfile = new File("this.txt");//external file can be reading
-// try{
-//     Scanner sc = new Scanner(myfile);
-//     while(sc.hasNextLine()){
-//         String line = sc.nextLine();
-//         System.out.println(line);
+File myfile = new File("this.txt");//external file can be reading
+try{
+    Scanner sc = new Scanner(myfile);
+    while(sc.hasNextLine()){
+        String line = sc.nextLine();
+        System.out.println(line);
 
-//     }
-//     sc.close();
-// } catch(FileNotFoundException e){
-//     e.printStackTrace();
+    }
+    sc.close();
+} catch(FileNotFoundException e){
+    e.printStackTrace();
     
-// }
-// }
-// } 
-//delete file 
-// File myfile = new File("this.txt");
-// if(myfile.delete()){
-//     System.out.println("i have delted"+myfile.getName());
+}
+}
+} 
+delete file 
+File myfile = new File("this.txt");
+if(myfile.delete()){
+    System.out.println("i have delted"+myfile.getName());
 
-// }
-// else{System.out.println("some problem occured while deletion the file");
-// }
-// }
-// }
-//  try {
-//             FileOutputStream fos = new FileOutputStream("data.txt");
+}
+else{System.out.println("some problem occured while deletion the file");
+}
+}
+}
+ try {
+            FileOutputStream fos = new FileOutputStream("data.txt");
 
-//             String text = "Hello Java";
+            String text = "Hello Java";
 
-//             fos.write(text.getBytes());
+            fos.write(text.getBytes());
 
-//             fos.close();
+            fos.close();
 
-//             System.out.println("Data written successfully.");
-//         } catch (Exception e) {
-//             System.out.println(e);
-//         }
-//     }
-// }
+            System.out.println("Data written successfully.");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
 
-//         try {
-//             FileInputStream fis = new FileInputStream("data.txt");
+        try {
+            FileInputStream fis = new FileInputStream("data.txt");
 
-//             int ch;
-//             while ((ch = fis.read()) != -1) {
-//                 System.out.print((char) ch);
-//             }
+            int ch;
+            while ((ch = fis.read()) != -1) {
+                System.out.print((char) ch);
+            }
 
-//             fis.close();
-//         } catch (Exception e) {
-//             System.out.println(e);
-//         }
-//     }
-// }
-// try {
-//             FileReader fr = new FileReader("data.txt");
+            fis.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+try {
+            FileReader fr = new FileReader("data.txt");
 
-//             int ch;
-//             while ((ch = fr.read()) != -1) {
-//                 System.out.print((char) ch);
-//             }
+            int ch;
+            while ((ch = fr.read()) != -1) {
+                System.out.print((char) ch);
+            }
 
-//             fr.close();
-//         } catch (Exception e) {
-//             System.out.println(e);
-//         }
-//     }
-// }
+            fr.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
 
