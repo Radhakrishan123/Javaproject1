@@ -19,21 +19,22 @@ public class Practice {
         }
     }
 }
-// import java.io.FileWriter;
-// import java.io.IOException;
+//this part is file handling 
+import java.io.FileWriter;
+import java.io.IOException;
 
-// public class FileWrite {
-//     public static void main(String[] args) {
+public class FileWrite {
+    public static void main(String[] args) {
 
-//         try {
-//             FileWriter fw = new FileWriter("data.txt");
-//             fw.write("Welcome to Java");
-//             fw.close();
+        try {
+            FileWriter fw = new FileWriter("data.txt");
+            fw.write("Welcome to Java");
+            fw.close();
 
-//             System.out.println("File Written Successfully");
+            System.out.println("File Written Successfully");
 
-//         } catch (IOException e) {
-//             System.out.println(e);
-//         }
-//     }
-// }
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+}
